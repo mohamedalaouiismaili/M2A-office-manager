@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="M2A Office Manager — simulation simple du dossier client, des documents, journaux, tâches et échéances.">
+<title>M2A Office Manager</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="logo">M2A</div><div><div class="btitle">M2A Office Manager</div><div class="bsub" id="brandSub">Gestion du dossier client</div></div></div>
+    <nav class="nav" id="nav">
+      <button class="active" data-view="dashboard">⌂ <span data-k="dashboard">Tableau de bord</span></button>
+      <button data-view="clients">◈ <span data-k="clients">Clients</span></button>
+      <button data-view="dossier">▤ <span data-k="dossier">Dossier client</span></button>
+      <button data-view="workflow">↻ <span data-k="workflow">Workflow</span></button>
+      <button data-view="tasks">✓ <span data-k="tasks">Tâches</span></button>
+      <button data-view="deadlines">◷ <span data-k="deadlines">Échéances</span></button>
+      <button data-view="activity">≡ <span data-k="activity">Journal</span></button>
+    </nav>
+    <div class="side-bottom">
+      <button class="ghost" id="exportBtn">Exporter</button>
+      <label class="ghost" style="text-align:center">Importer<input id="importInput" type="file" accept=".json" hidden></label>
+      <button class="ghost" id="resetBtn">Réinitialiser la démo</button>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="top">
+      <div class="search-global"><span>⌕</span><input id="globalSearch" placeholder="Rechercher un client, document ou tâche…" autocomplete="off"></div>
+      <div class="tools"><button class="icon" id="quick">＋</button><div class="seg"><button id="fr" class="active">Fr</button><button id="en">Eng</button></div><button class="theme" id="theme" aria-label="Thème"><span class="track"><span class="knob"></span></span><span id="sun">☼</span></button><div class="avatar">AM</div></div>
+    </header>
+    <section class="content">
+      <div id="v-dashboard" class="view active"></div>
+      <div id="v-clients" class="view"></div>
+      <div id="v-dossier" class="view"></div>
+      <div id="v-workflow" class="view"></div>
+      <div id="v-tasks" class="view"></div>
+      <div id="v-deadlines" class="view"></div>
+      <div id="v-activity" class="view"></div>
+    </section>
+  </main>
+</div>
+<div class="modalback" id="back"><div class="modal" id="modal"></div></div><div class="toastwrap" id="toasts"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
